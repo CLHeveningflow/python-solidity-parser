@@ -18,6 +18,10 @@ if __name__ == "__main__":
     node = parser.parse_file(sys.argv[2], loc=False)
     if sys.argv[1]=="parse":
         pprint.pprint(node)
+    elif sys.argv[1]=="function":
+        sourceUnitObject = parser.objectify(node)
+        for p in sourceUnitObject.contracts.items():
+            pass
     elif sys.argv[1]=="outline":
         level = 0
         sourceUnitObject = parser.objectify(node)
